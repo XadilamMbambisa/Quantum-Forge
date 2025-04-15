@@ -1,4 +1,4 @@
-# MNM-Innovations
+# Quantum Forge
 
 ##Project Overview
 We are developing a softwre system that will help educate high school students and undergraduate students at the possible career fields in STEM(Science Technology Engineering Mathematics)
@@ -14,3 +14,4 @@ We are developing a softwre system that will help educate high school students a
 ##Technoligies Used
 -HTML/CSS and JavaScript
 -Java
+-Python
