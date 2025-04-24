@@ -28,9 +28,9 @@ Even with the limited knowledge of the careers that they do have, they have no i
   ## Moore's Vision Template
   **For** high school, undergraduate students, educators and parents.
   **Who** lack awareness of all the different STEM careers available in South Africa.
-  **The** "STEMify Mzansi" helps students discover, prepre for and succeed in STEM careers. 
+  **The** "STEMify Mzansi" helps students discover, prepare for and succeed in STEM careers. 
   **Is** a personalized STEM career exploration platform that helps high school and undergraduate students discover their ideal STEM career paths.
   **That** helps educate users on these different fields.
   **Unlike** generic platforms such as "Careers24", "Job Mail" which lack proper information about STEM fields. 
-  **Our product** is tailored for South African students with an emphsis on the actionable steps they can take with the opportunities avilable to them.
+  **Our product** is tailored for South African students with an emphasis on the actionable steps they can take with the opportunities avilable to them.
   
