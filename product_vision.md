@@ -10,7 +10,7 @@ Even with the limited knowledge of the careers that they do have, they have no i
 - Undergraduate students
 
   ## Unique Value Propositions:
-  A platform to get all the required information opf all the different careers avaiilable and the paths that can be take for each.
+  A platform to get all the required information of all the different careers available and the paths that can be taken for each.
 
   ## Key features:
   Career profiles
