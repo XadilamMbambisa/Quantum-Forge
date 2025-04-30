@@ -1,0 +1,54 @@
+##  Meeting 1 – Duration: 45 minutes
+
+Facilitator: Asanda  
+Platform: Contact(Physics Lab)
+Attendance: All team members were present.
+
+- Each member had reviewed the plan for Phase 2.
+- Initial confusion existed regarding the exact deliverables.
+- Xadilam proposed selecting an Agile methodology before drafting:
+  - User Stories
+  - Scenarios
+  - Features
+-Task Assignments:
+  - Xadilam & Buhle: User Stories & Scenarios for Undergraduate Students
+  - Asanda and Malibongwe: User Stories & Scenarios for High School Students
+- The team agreed to discuss features only after completing User Stories and Scenarios.
+- Buhle & Malibongwe: Create Kanban board on GitHub.
+- Xadilam expressed interest in:
+  - Testing VM platforms
+  - Exploring web scraping with Python
+- Next Meeting: Following Wednesday to review progress
+
+
+## Meeting 2 – Duration: 10 minutes
+
+Type: Informal
+Platform: Microsoft Teams
+Facilitator: None
+
+- Asanda and Xadilam joined first and discussed meeting frequency.
+- Decided: Wednesday meetings unnecessary unless in development phase.
+- Friday meetings to remain as the primary meetings for the team.
+- Buhle and Malibongwe joined later and agreed with the decision.
+
+## Meeting 3 – Duration: 68 minutes
+
+Facilitator: Xadilam  
+Platform: Microsoft Teams
+
+- Team members presented their User Stories and Scenarios.
+- Xadilam reported difficulties with VM tools and paused that work for now.
+- The team identified preliminary features derived from the user stories:
+
+### Proposed Features (subject to change)
+
+- Interactive Quiz – Gauges user interests
+- Student Type Selector – Differentiates needs for undergrads and high school students
+- Institution Card – Shows course-relevant info for each university
+- Glossary – Supports understanding for high school students
+- Stories Section – Motivates users to pursue STEM careers
+
+- Team agreed to revise their User Stories & Scenarios for better alignment with user needs and feature requirements.
+- Next Meeting: Wednesday (two days after test) to finalize User Stories, Scenarios, and Features
+
