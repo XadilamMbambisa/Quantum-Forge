@@ -1,7 +1,47 @@
 #*User Stories*
 
 ##High School students
+#Persona:#
 
+Name: Likhanya Cele
+Age: 18
+Occupation: Student
+Education: Grade 11, currently doing grade 12
+
+Goals:
+- Find information on different courses
+- Know necessary requirements needed for different courses
+- Finding a platform that has all information Likhanya is interested in
+
+Motivation:
+- Likhanya would like to attend one of the best Universities,
+- Likhanya would like know the necessary requirements so she has a goal to work towards in all her subjects and overall aggregate 
+
+Frustrations:
+- As a high school learner Likhanya is unfamiliar with terminology used by tertiary institutions
+- Likhanya finds it difficult to keep up with all the different tertiary institution websites and would appreciate a single platform with all necessary information 
+- Likhanya finds it hard to navigate through certain webpages and would like a simple, easy to navigate Graphical User Interface 
+
+#Scenario:#
+
+Likhanya Cele is a focused Grade 12 student in South Africa who is determined and passionate about her future. She is determined to make it in the STEM field and would love to study at one of the top Universities in the country. However she is not sure which course to go into or what marks she needs to obtain to be considered for the course that she eventually chooses. 
+
+Likhanya searches for a platform that has information on STEM fields and all the universities that have programs within this field. Likhanya finds STEMify. When Likhanya discovers this platform she uses her details to sign up. When she has successfully signed up on the STEMify platform she is then able to log in. A username and password is entered by Likhanya which takes her to a landing page which will ask Likhanya if she is a High School learner or Tertiary student (as STEMify caters to both). Once Likhanya selects the High School option she will be asked to input more details such as, what grade she is in, what are her interests (this helps narrow down programs she might be interested in). There will also be an interactive quiz that will further help narrow the search. Once Likhanya has an idea of the courses she would be interested in she can search for the courses on the platform to find more detailed information such as, APS score needed and the career paths one can go into. With this platform Likhanya will be able to find all necessary information in one place. 
+
+#User Story:#
+Likhanya Cele is an ambitious 18-year-old Grade 12 student who dreams of attending one of the best universities in South Africa. With a strong desire to succeed, she wants to ensure she meets all the necessary academic requirements for the courses she's interested in. However, the process of researching university programs is overwhelming—every university has a different website layout, academic jargon is unfamiliar, and navigating through all this information while preparing for final exams is stressful.
+
+To support her goals, Likhanya begins using a student-friendly career guidance platform designed specifically for learners like her (STEMify). Upon logging into the platform, she is greeted with a clean and intuitive interface that doesn’t require complex technical skills to navigate.
+
+Curious about a career in Computer Science, Likhanya types "Computer Science" into the course search bar. The platform displays a list of universities that offer the program, along with clearly listed subject requirements, minimum APS scores, and extra notes like whether she needs to take a National Benchmark Test (NBT). A glossary feature pops up whenever she hovers over confusing terms, instantly explaining them in everyday language. This helps her understand what “NQF Level 7” or “Faculty of Natural Science” actually mean.
+
+The platform also has a recommendation engine. Based on her marks, interests, and subjects, it suggests other programs that align with her strengths—such as Physical Sciences and Mathematics —offering her more options she hadn’t considered before. Each recommended course includes a "What You’ll Need" section, summarizing requirements and helpful advice like improving Life Sciences or writing a strong motivational letter.
+
+Thanks to the platform’s centralized, API-driven structure behind the scenes, all the data is accurate and up-to-date, pulled from official university websites in real-time. Likhanya doesn’t need to jump between multiple sources or dig through outdated PDFs. Everything she needs is in one place.
+
+Feeling more confident, she sets goals for each subject based on what she now knows is required.What once felt confusing and intimidating now feels manageable and clear.
+
+Through this simple but powerful software, Likhanya gains clarity, direction, and peace of mind—helping her stay motivated and focused as she works towards her academic dreams.
 
 
 ##Undergraduate Students
