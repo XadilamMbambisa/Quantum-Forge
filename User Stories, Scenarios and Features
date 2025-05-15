@@ -1,6 +1,8 @@
 #*User Stories*
 
 ##High School students
+SET 1
+
 #Persona:#
 
 Name: Likhanya Cele
@@ -43,8 +45,109 @@ Feeling more confident, she sets goals for each subject based on what she now kn
 
 Through this simple but powerful software, Likhanya gains clarity, direction, and peace of mind—helping her stay motivated and focused as she works towards her academic dreams.
 
+SET 2
+
+# Scenario: Exploring STEM Careers with the App
+
+## Users  
+- **Alex**: High school junior, interested in robotics but unsure about career paths  
+- **Jordan**: High school senior, curious about computer science but lacks guidance  
+- **Taylor**: High school sophomore, loves biology but doesn’t know related STEM jobs  
+- **Ms. Rivera**: School counselor, helps students with career planning
+
+## Situation  
+Alex, Jordan, and Taylor attend a STEM Career Exploration Workshop hosted by their school counselor, Ms. Rivera. She introduces them to the STEM Career Guide App to help them discover career options based on their interests and skills.
+
+## How They Use the App
+
+### 1. Personalized Career Quiz  
+- Students begin by taking the app’s Career Interest Quiz, answering questions about their favorite subjects, skills, and work preferences.  
+- **Alex** is matched with *Robotics Engineering*, **Jordan** with *Software Development*, and **Taylor** with *Biomedical Research*.
+
+### 2. Exploring Career Profiles  
+- Each student explores their suggested careers through interactive profiles, which include:
+  - Job descriptions  
+  - Required education and skills  
+  - Salary ranges  
+  - Day-in-the-life videos of professionals  
+- **Jordan** discovers that *AI Engineering* also aligns with their interests and saves it to their favorites.
+
+### 3. Matching with STEM Pathways  
+- The app suggests educational pathways, such as:
+  - Recommended high school courses  
+  - College degree options  
+  - Certifications and internships  
+- **Taylor** finds a *bioinformatics* track they hadn’t heard of before and explores nearby universities offering related programs.
+
+### 4. Connecting with Mentors and Events  
+- The app’s **Ask a STEM Pro** feature allows students to chat with industry experts.  
+- **Alex** schedules a virtual Q&A session with a robotics engineer.  
+- The app also notifies them about an upcoming STEM Career Fair in their city.
+
+### 5. Setting Goals and Tracking Progress  
+- Students use the **Career Roadmap** tool to set short-term goals (e.g., take a coding class) and long-term goals (e.g., apply to an engineering college).  
+- **Ms. Rivera** checks their progress and suggests additional resources.
+
+## Outcome  
+By using the app, Alex, Jordan, and Taylor gain clarity on potential STEM careers, understand the steps needed to pursue them, and feel more confident about their future paths. Ms. Rivera is pleased with how the app empowers students to make informed decisions.
+
+---
+
+## Why This Scenario Works
+- **Realistic** – Reflects actual student struggles and counselor involvement  
+- **Feature-Rich** – Shows how different app tools (quizzes, mentors, roadmaps) support users  
+- **Goal-Oriented** – Demonstrates progression from exploration to action
+
 
 ##Undergraduate Students
+
+SET 1
+User Story
+
+As a final year undergraduate student with a physics and computing/programming background. I want to use STEMify Maznsi to explore the different career fields I can explore in the field of physics, so that I can make more informed decisions when it comes to applying to post-graduate courses, bursaries, upskilling I may need, internships or any relevant bootcamps I can attend.
+
+Scenario
+
+Persona: Athandwa is a 21 year old Bsc in Physics student at Walter Sisulu University. 
+He has completed modules such as Quantum Mechanics, Electrodynamics, Modern Physics, C++, Java, Complex Analysis. 
+He is curious in pursuing theoretical physics more especially work dealing with quantum algorithms/ quantum gravity and he is looking for guidance on how he can pursue this field and what he may need to do.
+Navigate to the STEMify page/app
+
+Search for Astrophysics. 
+Receives a “Career overview card” for “Astrophysics” which gives a description of what the field is, something along the lines of, “Astrophysics is a branch of astronomy that uses principles of chemistry and physics to study phenomena above the sun and to understand the universe and its contents. These physicists may work in observatories such as SALT and SKA studying these phenomena.”
+
+Education path
+
+The following may not necessarily be available at your institution but if you have a few of these you will be better off than an individual who did not take any. They may also be under different names or elements of these modules are included in some of the modules you take and the rest could be learned as an application/self study.
+Undergraduate: Modern Physics, Solid State Physics, Ordinary Differential Equations, Linear Algebra, General Relativity, Statistical Physics, Scientific Computing, Statistics.
+
+Post-graduate: Honours in Physics which includes General Relativity, Cosmology, Mathematical Physics or any relevant Astronomy modules. 
+The following institutions are displayed
+
+University of the Witwatersrand (Wits) – BSc Astronomy and Astrophysics, honours projects, cosmology, relativity
+ University of Cape Town (UCT) – Physics major with astronomy electives, honours research in exoplanets and galactic evolution
+University of South Africa (UNISA) – Distance learning in Astronomy, honours research options
+Rhodes University – Physics & Electronics, strong link to SARAO, honours with radio astronomy projects
+He can then explore the university programs in more details including the entry requirements and all the program entails.
+Suggestions on what he can do to make himself a more appealing candidate such as attend the NAASP winter schools, taking online certification courses in computing.
+
+SET 2
+
+User Story and Scenario
+
+Thabo is a first-year Computer Science student who recently discovered a passion for coding after building a basic website in one of his introductory classes. Although he's excited about programming, he often feels uncertain about his future in tech. He lacks confidence in mathematics and isn't enrolled in any statistics modules, which makes him question whether he truly belongs in the field.
+
+One day, Thabo learns about a STEM career guidance app designed to help high school and undergraduate students explore career paths tailored to their interests and strengths. Curious and hopeful, he downloads the app and creates an account.
+
+After selecting his education level and field of study, Thabo completes a short quiz assessing his interests, skills, and academic background. He shares that he enjoys building websites, solving problems with code, and working with creative design tools like Figma. However, he admits that math-heavy subjects are a challenge.
+
+Based on his responses, the app recommends several career paths aligned with his profile: Front-End Developer, UI/UX Designer, and QA Tester. Thabo is especially intrigued by the Front-End Developer role. He taps into the suggested pathway and is greeted with a detailed overview of the profession. 
+The app explains how front-end developers build the visual and interactive parts of websites and applications, highlighting the importance of HTML, CSS, JavaScript, and frameworks like React.
+The app presents a structured learning roadmap, from beginner to professional, and suggests university modules and online courses to help him build the required skills. What truly resonates with Thabo, though, are the featured success stories—accounts of students who, like him, once doubted their math abilities but pursued front-end development successfully through creativity, persistence, and community support.
+
+Inspired and motivated, Thabo saves the front-end development path to his profile and enrolls in a beginner-friendly JavaScript course recommended by the app. He also joins his university’s coding club to meet like-minded peers and start building real-world projects.
+
+With a clearer sense of direction and growing confidence, Thabo begins to envision a future in tech that plays to his strengths, fuels his creativity, and gives him purpose.
 
 
 
