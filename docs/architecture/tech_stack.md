@@ -1,15 +1,9 @@
-Technology        
 
-HTML/CSS
-GitHub 
-Railway
-PostgreSQL
-Node.js
 
-Justification
-
-Fast and managable development of the UI
-Version control which ensures that team memebers can work on the project independently 
-Will be used for hosting and allows us to connect different parts of the system with ease          
-Presents/stores data in a relational manner which makes the data easier to work with
-Used for backend and to scrape websites for information
+| **Technology** | **Justification** |
+|----------------|-------------------|
+| **HTML/CSS**   | Fast and manageable development of the UI. |
+| **GitHub**     | Version control that ensures team members can work on the project independently. |
+| **Railway**    | Used for hosting and allows seamless integration between different parts of the system. |
+| **PostgreSQL** | Stores data in a relational manner, making it easier to query, manage, and maintain. |
+| **Node.js**    | Used for backend logic and to scrape websites for information when needed. |
