@@ -5,7 +5,7 @@
 
 ## Layers
 - **Presentation Layer**: HTML/CSS frontend that presents the interface to users.
-- **Application Layer**: Node.js backend that handles business logic, APIs, and data processing.
+- **Application Layer**:Python Flask which will handle the bussinees logic and web scrapping.
 - **Data Layer**: PostgreSQL for persistent storage of structured data like user info, careers, institutions, and glossary terms.
 
 
@@ -45,9 +45,9 @@
             v
 +-------------------------------+
 | Application Layer             |
-| Node.js Backend               |
+| Python Flask                  |
 | - API Logic                   |
-| - Scraping via Python         |
+| - Web Scrapping               |
 +-------------------------------+
               |
               v
