@@ -89,7 +89,8 @@ Alex, Jordan, and Taylor attend a STEM Career Exploration Workshop hosted by the
 - **Ms. Rivera** checks their progress and suggests additional resources.
 
 ## Outcome  
-By using the app, Alex, Jordan, and Taylor gain clarity on potential STEM careers, understand the steps needed to pursue them, and feel more confident about their future paths. Ms. Rivera is pleased with how the app empowers students to make informed decisions.
+By using the app, Alex, Jordan, and Taylor gain clarity on potential STEM careers, understand the steps needed to pursue them, and feel more confident about their future paths.
+Ms. Rivera is pleased with how the app empowers students to make informed decisions.
 
 ---
 
@@ -104,7 +105,8 @@ By using the app, Alex, Jordan, and Taylor gain clarity on potential STEM career
 SET 1
 User Story
 
-As a final year undergraduate student with a physics and computing/programming background. I want to use STEMify Maznsi to explore the different career fields I can explore in the field of physics, so that I can make more informed decisions when it comes to applying to post-graduate courses, bursaries, upskilling I may need, internships or any relevant bootcamps I can attend.
+As a final year undergraduate student with a physics and computing/programming background.
+I want to use STEMify Maznsi to explore the different career fields I can explore in the field of physics, so that I can make more informed decisions when it comes to applying to post-graduate courses, bursaries, upskilling I may need, internships or any relevant bootcamps I can attend.
 
 Scenario
 
@@ -118,7 +120,8 @@ Receives a “Career overview card” for “Astrophysics” which gives a descr
 
 Education path
 
-The following may not necessarily be available at your institution but if you have a few of these you will be better off than an individual who did not take any. They may also be under different names or elements of these modules are included in some of the modules you take and the rest could be learned as an application/self study.
+The following may not necessarily be available at your institution but if you have a few of these you will be better off than an individual who did not take any.
+They may also be under different names or elements of these modules are included in some of the modules you take and the rest could be learned as an application/self study.
 Undergraduate: Modern Physics, Solid State Physics, Ordinary Differential Equations, Linear Algebra, General Relativity, Statistical Physics, Scientific Computing, Statistics.
 
 Post-graduate: Honours in Physics which includes General Relativity, Cosmology, Mathematical Physics or any relevant Astronomy modules. 
@@ -138,7 +141,8 @@ Personas
 NAME: Amo Molefe.
 Age    :18 years old.
 Background:
- Amo is a curious and ambitious high school student from South Africa, passionate about science, technology, engineering, and mathematics (STEM). They aspire to pursue a career in the STEM field and are researching universities and programs that align with their interests
+ Amo is a curious and ambitious high school student from South Africa, passionate about science, technology, engineering, and mathematics (STEM).
+They aspire to pursue a career in the STEM field and are researching universities and programs that align with their interests.
 Goals:
 1. Explore various STEM career options and their requirements.
 2. Find suitable universities in South Africa that offer strong STEM programs.
@@ -163,4 +167,5 @@ Amo needs to find universities that offer strong STEM programs. They open the ap
 
 Amo compares factors like program duration, fees, and campus life. They prioritize their needs, weighing the importance of each factor. The app helps Amo identify universities that fit their criteria.
 
-The app's university search feature is user-friendly, allowing Amo to filter by location and program. Amo saves universities they're interested in, creating a personalized shortlist. This helps Amo make informed decisions about their academic future.
+The app's university search feature is user-friendly, allowing Amo to filter by location and program.
+Amo saves universities they're interested in, creating a personalized shortlist. This helps Amo make informed decisions about their academic future.
