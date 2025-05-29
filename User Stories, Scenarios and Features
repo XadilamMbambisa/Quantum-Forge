@@ -133,29 +133,34 @@ Suggestions on what he can do to make himself a more appealing candidate such as
 
 SET 2
 
-User Story and Scenario
 
-Thabo is a first-year Computer Science student who recently discovered a passion for coding after building a basic website in one of his introductory classes. Although he's excited about programming, he often feels uncertain about his future in tech. He lacks confidence in mathematics and isn't enrolled in any statistics modules, which makes him question whether he truly belongs in the field.
+Personas
+NAME: Amo Molefe.
+Age    :18 years old.
+Background:
+ Amo is a curious and ambitious high school student from South Africa, passionate about science, technology, engineering, and mathematics (STEM). They aspire to pursue a career in the STEM field and are researching universities and programs that align with their interests
+Goals:
+1. Explore various STEM career options and their requirements.
+2. Find suitable universities in South Africa that offer strong STEM programs.
+3. Understand the application process, admission requirements, and deadlines.’
+4. Make informed decisions about their academic and career path. Challenges:
+Challenges:
+1. Limited knowledge about STEM career options and university programs.
+2. Difficulty navigating the university application process.
+3. Uncertainty about choosing the right STEM field or university.
 
-One day, Thabo learns about a STEM career guidance app designed to help high school and undergraduate students explore career paths tailored to their interests and strengths. Curious and hopeful, he downloads the app and creates an account.
+scenario: Exploring STEM Careers
 
-After selecting his education level and field of study, Thabo completes a short quiz assessing his interests, skills, and academic background. He shares that he enjoys building websites, solving problems with code, and working with creative design tools like Figma. However, he admits that math-heavy subjects are a challenge.
+Amo, a high school student, opens the STEM career guide app to explore different career options. They're interested in science, technology, engineering, and mathematics, but are unsure which specific career path to pursue. The app provides a list of STEM careers, including job descriptions and required skills.
 
-Based on his responses, the app recommends several career paths aligned with his profile: Front-End Developer, UI/UX Designer, and QA Tester. Thabo is especially intrigued by the Front-End Developer role. He taps into the suggested pathway and is greeted with a detailed overview of the profession. 
-The app explains how front-end developers build the visual and interactive parts of websites and applications, highlighting the importance of HTML, CSS, JavaScript, and frameworks like React.
-The app presents a structured learning roadmap, from beginner to professional, and suggests university modules and online courses to help him build the required skills. What truly resonates with Thabo, though, are the featured success stories—accounts of students who, like him, once doubted their math abilities but pursued front-end development successfully through creativity, persistence, and community support.
+Amo browses through the list, learning about careers they never knew existed. They come across software engineers and read about job responsibilities, required skills, and salary range. Amo is intrigued and saves this career for future reference. They continue exploring other careers, filtering by interest and aptitude.
 
-Inspired and motivated, Thabo saves the front-end development path to his profile and enrolls in a beginner-friendly JavaScript course recommended by the app. He also joins his university’s coding club to meet like-minded peers and start building real-world projects.
+By exploring STEM careers through the app, Amo gains a better understanding of their options. They feel more prepared to choose a career path that aligns with their passions and skills. The app empowers Amo to take control of their future.
 
-With a clearer sense of direction and growing confidence, Thabo begins to envision a future in tech that plays to his strengths, fuels his creativity, and gives him purpose.
+User Story: Finding Universities
 
+Amo needs to find universities that offer strong STEM programs. They open the app, searching for universities in South Africa with reputable programs. The app provides a list of universities, including program details and admission requirements.
 
+Amo compares factors like program duration, fees, and campus life. They prioritize their needs, weighing the importance of each factor. The app helps Amo identify universities that fit their criteria.
 
-##**Features**
-
-Search bar.
-Interactive quiz.
-Student type.
-Glossary of the typical. university terms used.
-Institution card that shows all relevant info for the course whether you are an undergrad or a high school student.
-Stories section that may help motivate students, could be a post grad or someone from industry.
+The app's university search feature is user-friendly, allowing Amo to filter by location and program. Amo saves universities they're interested in, creating a personalized shortlist. This helps Amo make informed decisions about their academic future.
