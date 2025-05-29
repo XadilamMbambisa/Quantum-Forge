@@ -8,6 +8,7 @@ We are developing a softwre system that will help educate high school students a
 -Asanda Mngqundaniso(Project manager)
 -Malibongwe Ngwilingwili(Tester)
 -Buhle Magadla(Developer)
+-Kwasa Mkafulo(Tester)
 
 ##Features
 
