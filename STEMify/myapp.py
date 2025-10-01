@@ -1,0 +1,155 @@
+from flask import Flask, render_template, redirect, url_for, request, flash
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user, UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
+from models import db, User, Question, QuizResult, Booking
+import os
+
+app = Flask(__name__)
+
+# Config
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "devkey")
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///stemify.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+db.init_app(app)
+
+login_manager = LoginManager(app)
+login_manager.login_view = "login"
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+# ------------------ Routes ------------------
+
+# Landing page
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+# Login
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    error = None
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        user = User.query.filter_by(username=username).first()
+        if user and check_password_hash(user.password_hash, password):
+            login_user(user)
+            if user.role == "student":
+                return redirect(url_for("student_dashboard"))
+            return redirect(url_for("advisor_dashboard"))
+        error = "Invalid credentials."
+    return render_template("login.html", error=error)
+
+# Logout
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("index"))
+
+# ------------------ Student Routes ------------------
+
+@app.route("/student/dashboard")
+@login_required
+def student_dashboard():
+    if current_user.role != "student":
+        flash("Access denied.")
+        return redirect(url_for("index"))
+    results = QuizResult.query.filter_by(student_id=current_user.id).all()
+    bookings = Booking.query.filter_by(student_id=current_user.id).all()
+    return render_template("student_dashboard.html", username=current_user.username,
+                           results=results, bookings=bookings)
+
+@app.route("/quiz", methods=["GET", "POST"])
+@login_required
+def quiz():
+    if current_user.role != "student":
+        flash("Access denied.")
+        return redirect(url_for("index"))
+
+    if request.method == "POST":
+        answers = request.form.getlist("answers")
+        scores = {"industry": 0, "research": 0, "academia": 0}
+        for a in answers:
+            if a in scores:
+                scores[a] += 1
+        best = max(scores, key=scores.get)
+
+        result = QuizResult(
+            student_id=current_user.id,
+            industry_score=scores["industry"],
+            research_score=scores["research"],
+            academia_score=scores["academia"],
+            chosen_path=best
+        )
+        db.session.add(result)
+        db.session.commit()
+        return redirect(url_for("results", result_id=result.id))
+
+    questions = Question.query.all()
+    return render_template("quiz.html", questions=questions)
+
+@app.route("/results/<int:result_id>")
+@login_required
+def results(result_id):
+    if current_user.role != "student":
+        flash("Access denied.")
+        return redirect(url_for("index"))
+    result = QuizResult.query.get_or_404(result_id)
+    return render_template("results.html", result=result)
+
+@app.route("/book_session", methods=["GET", "POST"])
+@login_required
+def book_session():
+    if current_user.role != "student":
+        flash("Only students can book sessions.")
+        return redirect(url_for("index"))
+
+    advisors = User.query.filter_by(role="advisor").all()
+
+    if request.method == "POST":
+        advisor_id = request.form["advisor_id"]
+        start_time = request.form["start_time"]
+
+        booking = Booking(
+            student_id=current_user.id,
+            advisor_id=advisor_id,
+            start_time=start_time,
+            status="booked"
+        )
+        db.session.add(booking)
+        db.session.commit()
+        flash("Session booked successfully!")
+        return redirect(url_for("student_dashboard"))
+
+    return render_template("book_session.html", advisors=advisors)
+
+# ------------------ Advisor Routes ------------------
+
+@app.route("/advisor/dashboard")
+@login_required
+def advisor_dashboard():
+    if current_user.role != "advisor":
+        flash("Access denied.")
+        return redirect(url_for("index"))
+    return render_template("advisor_dashboard.html", username=current_user.username)
+
+@app.route("/view_sessions")
+@login_required
+def view_sessions():
+    if current_user.role != "advisor":
+        flash("Only advisors can view sessions.")
+        return redirect(url_for("index"))
+
+    bookings = Booking.query.filter_by(advisor_id=current_user.id).all()
+    return render_template("view_sessions.html", bookings=bookings)
+
+# ------------------ Initialize DB & Run ------------------
+if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)
