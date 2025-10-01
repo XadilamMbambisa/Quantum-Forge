@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>STEMify Quiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Career Path Quiz</h2>
+
+  <form method="POST">
+    {% for q in questions %}
+      <div class="question">
+        <p><strong>Q{{ loop.index }}:</strong> {{ q.text }}</p>
+        <label>
+          <input type="radio" name="answers" value="industry" required> Industry
+        </label>
+        <label>
+          <input type="radio" name="answers" value="research"> Research
+        </label>
+        <label>
+          <input type="radio" name="answers" value="academia"> Academia
+        </label>
+      </div>
+      <hr>
+    {% endfor %}
+    <button type="submit">Submit Quiz</button>
+  </form>
+</body>
+</html>

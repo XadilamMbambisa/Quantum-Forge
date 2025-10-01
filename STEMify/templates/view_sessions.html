@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advisor Sessions - STEMify</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Booked Sessions</h1>
+
+  {% if bookings %}
+    <ul>
+      {% for b in bookings %}
+        <li>
+          Student ID: {{ b.student_id }} - 
+          Time: {{ b.start_time }} - 
+          Status: {{ b.status }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No sessions booked yet.</p>
+  {% endif %}
+
+  <br>
+  <a href="{{ url_for('advisor_dashboard') }}">⬅ Back to Dashboard</a>
+</body>
+</html>

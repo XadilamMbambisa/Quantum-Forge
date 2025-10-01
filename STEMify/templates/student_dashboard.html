@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard - STEMify</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Welcome, {{ username }}</h1>
+  <h2>Student Dashboard</h2>
+
+  <ul>
+    <li><a href="{{ url_for('quiz') }}">📝 Take Quiz</a></li>
+    <li><a href="{{ url_for('book_session') }}">📅 Book Advisor Session</a></li>
+    <li><a href="{{ url_for('logout') }}">🚪 Logout</a></li>
+  </ul>
+</body>
+</html>
