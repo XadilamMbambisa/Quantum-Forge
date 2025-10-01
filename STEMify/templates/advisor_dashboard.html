@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advisor Dashboard - STEMify</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Welcome, {{ username }}</h1>
+  <h2>Advisor Dashboard</h2>
+
+  <ul>
+    <li><a href="{{ url_for('view_sessions') }}">👥 View Booked Sessions</a></li>
+    <li><a href="{{ url_for('logout') }}">🚪 Logout</a></li>
+  </ul>
+</body>
+</html>
