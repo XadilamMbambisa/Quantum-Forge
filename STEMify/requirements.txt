@@ -5,4 +5,4 @@ Werkzeug==2.3.6
 itsdangerous==2.1.2
 click==8.1.6
 Flask-Login==0.6.2
-gunicorn== 21.2.0
+gunicorn==21.2.0
