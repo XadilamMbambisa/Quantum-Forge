@@ -13,13 +13,10 @@
       <div class="question">
         <p><strong>Q{{ loop.index }}:</strong> {{ q.text }}</p>
         <label>
-          <input type="radio" name="answers_{{ loop.index }}" value="industry" required> Industry
+          <input type="radio" name="q{{ q.id }}" value="{{ q.category }}" required> Yes
         </label>
         <label>
-          <input type="radio" name="answers_{{ loop.index }}" value="research"> Research
-        </label>
-        <label>
-          <input type="radio" name="answers_{{ loop.index }}" value="academia"> Academia
+          <input type="radio" name="q{{ q.id }}" value=""> No
         </label>
       </div>
       <hr>
