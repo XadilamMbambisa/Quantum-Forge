@@ -7,7 +7,7 @@ def seed_data():
         db.drop_all()
         db.create_all()
 
-        # Add users
+        # Add default users
         student = User(
             username="student1",
             email="student@example.com",
@@ -21,18 +21,30 @@ def seed_data():
             role="advisor"
         )
 
-        db.session.add(student)
-        db.session.add(advisor)
+        db.session.add_all([student, advisor])
 
-        # Add sample questions
-        q1 = Question(text="Do you enjoy working on practical, hands-on problems?", category="industry")
-        q2 = Question(text="Do you like solving abstract problems and publishing findings?", category="research")
-        q3 = Question(text="Do you enjoy teaching and mentoring others?", category="academia")
+        # Add sample questions for each category
+        questions = [
+            # Industry
+            Question(text="Do you enjoy working on practical, hands-on problems?", category="industry"),
+            Question(text="Do you like solving real-world challenges in a team?", category="industry"),
+            Question(text="Do you prefer applied projects over theoretical ones?", category="industry"),
 
-        db.session.add_all([q1, q2, q3])
+            # Research
+            Question(text="Do you like solving abstract problems and publishing findings?", category="research"),
+            Question(text="Do you enjoy analyzing data and discovering new patterns?", category="research"),
+            Question(text="Are you interested in conducting experiments to test theories?", category="research"),
 
+            # Academia
+            Question(text="Do you enjoy teaching and mentoring others?", category="academia"),
+            Question(text="Do you like preparing lectures or presenting ideas?", category="academia"),
+            Question(text="Are you motivated by helping students learn and succeed?", category="academia")
+        ]
+
+        db.session.add_all(questions)
         db.session.commit()
-        print("✅ Database seeded with default users and questions.")
+
+        print("✅ Database seeded with default users and multiple questions per category.")
 
 if __name__ == "__main__":
     seed_data()
