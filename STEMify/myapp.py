@@ -51,6 +51,41 @@ def logout():
     logout_user()
     return redirect(url_for("index"))
 
+# Create/register account
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        username = request.form["username"]
+        email = request.form["email"]
+        password = request.form["password"]
+        confirm_password = request.form["confirm_password"]
+        role = request.form["role"]
+
+        # Validate password match
+        if password != confirm_password:
+            flash("Passwords do not match.")
+            return redirect(url_for("register"))
+
+        # Check if username or email already exists
+        existing_user = User.query.filter((User.username == username) | (User.email == email)).first()
+        if existing_user:
+            flash("Username or email already exists.")
+            return redirect(url_for("register"))
+
+        # Hash the password and create the new user
+        hashed_password = generate_password_hash(password)
+        new_user = User(username=username, email=email, password_hash=hashed_password, role=role)
+
+        db.session.add(new_user)
+        db.session.commit()
+
+        flash("Account created successfully! Please log in.")
+        return redirect(url_for("login"))
+
+    return render_template("register.html")
+
+
 # ------------------ Student Routes ------------------
 
 @app.route("/student/dashboard")
@@ -153,4 +188,5 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run()
+
 
