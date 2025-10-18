@@ -175,6 +175,48 @@ def book_session():
 
     return render_template("book_session.html", advisors=advisors)
 
+    @app.route("/cancel_session/<int:booking_id>", methods=["POST"])
+@login_required
+def cancel_session(booking_id):
+    booking = Booking.query.get_or_404(booking_id)
+    if booking.student_id != current_user.id:
+        flash("You cannot cancel another student's booking.")
+        return redirect(url_for("student_dashboard"))
+
+    booking.cancel()
+    db.session.commit()
+    flash("Your session has been cancelled.")
+    return redirect(url_for("student_dashboard"))
+
+
+@app.route("/reschedule_session/<int:booking_id>", methods=["POST"])
+@login_required
+def reschedule_session(booking_id):
+    booking = Booking.query.get_or_404(booking_id)
+    if booking.student_id != current_user.id:
+        flash("You cannot reschedule another student's booking.")
+        return redirect(url_for("student_dashboard"))
+
+    new_time = request.form["new_time"]
+
+    # Check for conflicts
+    existing_booking = Booking.query.filter_by(
+        advisor_id=booking.advisor_id, start_time=new_time
+    ).first()
+    student_conflict = Booking.query.filter_by(
+        student_id=current_user.id, start_time=new_time
+    ).first()
+
+    if existing_booking or student_conflict:
+        flash("This time slot is already booked. Choose another one.")
+        return redirect(url_for("student_dashboard"))
+
+    booking.reschedule(new_time)
+    db.session.commit()
+    flash("Session successfully rescheduled!")
+    return redirect(url_for("student_dashboard"))
+
+
 # ------------------ Advisor Routes ------------------
 
 @app.route("/advisor/dashboard")
@@ -200,6 +242,7 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run()
+
 
 
 
