@@ -106,19 +106,18 @@ def quiz():
         flash("Access denied.")
         return redirect(url_for("index"))
 
+    questions = Question.query.all()
+
     if request.method == "POST":
-        # Initialize category scores
         scores = {"industry": 0, "research": 0, "academia": 0}
 
-        # Loop over all question answers submitted
-        for key, value in request.form.items():
-            if value in scores:
-                scores[value] += 1
+        for q in questions:
+            selected_category = request.form.get(f"q{q.id}")
+            if selected_category in scores:
+                scores[selected_category] += 1
 
-        # Determine the best career path
         best = max(scores, key=scores.get)
 
-        # Save the result in the database
         result = QuizResult(
             student_id=current_user.id,
             industry_score=scores["industry"],
@@ -131,8 +130,6 @@ def quiz():
 
         return redirect(url_for("results", result_id=result.id))
 
-    # GET request → show all questions
-    questions = Question.query.all()
     return render_template("quiz.html", questions=questions)
 
 @app.route("/book_session", methods=["GET", "POST"])
@@ -186,6 +183,7 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run()
+
 
 
 
