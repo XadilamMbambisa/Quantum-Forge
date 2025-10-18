@@ -29,3 +29,9 @@ class Booking(db.Model):
     advisor_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     start_time = db.Column(db.String(50))
     status = db.Column(db.String(20), default="booked")
+
+    __table_args__ = (
+        db.UniqueConstraint('advisor_id', 'start_time', name='unique_advisor_slot'),
+    )
+
+
