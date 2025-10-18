@@ -145,6 +145,23 @@ def book_session():
         advisor_id = request.form["advisor_id"]
         start_time = request.form["start_time"]
 
+        # Check for conflicts
+        existing_booking = Booking.query.filter_by(
+            advisor_id=advisor_id, start_time=start_time
+        ).first()
+
+        student_conflict = Booking.query.filter_by(
+            student_id=current_user.id, start_time=start_time
+        ).first()
+
+        if existing_booking:
+            flash("This advisor is already booked at that time. Please choose another slot.")
+            return redirect(url_for("book_session"))
+
+        if student_conflict:
+            flash("You already have a session booked at that time.")
+            return redirect(url_for("book_session"))
+
         booking = Booking(
             student_id=current_user.id,
             advisor_id=advisor_id,
@@ -183,6 +200,7 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run()
+
 
 
 
