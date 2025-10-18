@@ -107,13 +107,18 @@ def quiz():
         return redirect(url_for("index"))
 
     if request.method == "POST":
-        answers = request.form.getlist("answers")
+        # Initialize category scores
         scores = {"industry": 0, "research": 0, "academia": 0}
-        for a in answers:
-            if a in scores:
-                scores[a] += 1
+
+        # Loop over all question answers submitted
+        for key, value in request.form.items():
+            if value in scores:
+                scores[value] += 1
+
+        # Determine the best career path
         best = max(scores, key=scores.get)
 
+        # Save the result in the database
         result = QuizResult(
             student_id=current_user.id,
             industry_score=scores["industry"],
@@ -123,19 +128,12 @@ def quiz():
         )
         db.session.add(result)
         db.session.commit()
+
         return redirect(url_for("results", result_id=result.id))
 
+    # GET request → show all questions
     questions = Question.query.all()
     return render_template("quiz.html", questions=questions)
-
-@app.route("/results/<int:result_id>")
-@login_required
-def results(result_id):
-    if current_user.role != "student":
-        flash("Access denied.")
-        return redirect(url_for("index"))
-    result = QuizResult.query.get_or_404(result_id)
-    return render_template("results.html", result=result)
 
 @app.route("/book_session", methods=["GET", "POST"])
 @login_required
@@ -188,5 +186,6 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run()
+
 
 
