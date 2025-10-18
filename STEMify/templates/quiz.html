@@ -8,20 +8,22 @@
 <body>
   <h2>Career Path Quiz</h2>
 
-  <form method="POST">
-    {% for q in questions %}
-      <div class="question">
-        <p><strong>Q{{ loop.index }}:</strong> {{ q.text }}</p>
+ <form method="POST">
+  {% for q in questions %}
+    <div class="question">
+      <p><strong>Q{{ loop.index }}:</strong> {{ q.text }}</p>
+      {% for opt in q.options %}
         <label>
-          <input type="radio" name="q{{ q.id }}" value="{{ q.category }}" required> Yes
-        </label>
-        <label>
-          <input type="radio" name="q{{ q.id }}" value=""> No
-        </label>
-      </div>
-      <hr>
-    {% endfor %}
-    <button type="submit">Submit Quiz</button>
-  </form>
+          <input type="radio" name="q{{ q.id }}" value="{{ opt.category }}" required>
+          {{ opt.text }}
+        </label><br>
+      {% endfor %}
+    </div>
+    <hr>
+  {% endfor %}
+  <button type="submit">Submit Quiz</button>
+</form>
+
 </body>
 </html>
+
