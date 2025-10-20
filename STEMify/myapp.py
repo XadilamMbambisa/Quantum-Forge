@@ -176,8 +176,8 @@ def book_session():
     return render_template("book_session.html", advisors=advisors)
 
     @app.route("/cancel_session/<int:booking_id>", methods=["POST"])
-@login_required
-def cancel_session(booking_id):
+    @login_required
+    def cancel_session(booking_id):
     booking = Booking.query.get_or_404(booking_id)
     if booking.student_id != current_user.id:
         flash("You cannot cancel another student's booking.")
@@ -242,6 +242,7 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run()
+
 
 
 
