@@ -42,7 +42,8 @@ input[type="password"] {
   border-radius: 5px;
 }
 
-button {
+button,
+a.button-link  {
   width: 100%;
   padding: 10px;
   background-color: #007bff;
@@ -53,18 +54,19 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button:hover,
+a.button-link:hover {
   background-color: #0056b3;
 }
 
-a {
+/*a {
   color: #007bff;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-}
+}*/
 
 /* Message and footer */
 p {
@@ -75,3 +77,4 @@ p {
   color: red;
   font-weight: bold;
 }
+
