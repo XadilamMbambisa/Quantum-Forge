@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>STEMify Quiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="content-wrapper">
+    <h2>Career Path Quiz</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p class="error">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+      {% for q in questions %}
+        <div class="question">
+          <p><strong>Q{{ loop.index }}:</strong> {{ q.text }}</p>
+          {% for opt in q.options %}
+            <label>
+              <input type="radio" name="q{{ q.id }}" value="{{ opt.category }}" required>
+              {{ opt.text }}
+            </label><br>
+          {% endfor %}
+        </div>
+        <hr>
+      {% endfor %}
+      <button type="submit">Submit Quiz</button>
+    </form>
+    <p><a href="{{ url_for('student_dashboard') }}">Back to Dashboard</a></p>
+  </div>
+</body>
+</html>

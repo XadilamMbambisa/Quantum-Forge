@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Results - STEMify</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="content-wrapper">
+    <h2>Quiz Results</h2>
+    <p><strong>Best Fit:</strong> {{ result.chosen_path | capitalize }}</p>
+    <h3>Scores</h3>
+    <ul>
+      <li>Industry: {{ result.industry_score }}</li>
+      <li>Research: {{ result.research_score }}</li>
+      <li>Academia: {{ result.academia_score }}</li>
+    </ul>
+    <p><a href="{{ url_for('career_info', path_name=result.chosen_path) }}">View Recommended Careers</a></p>
+    <hr>
+    <a href="{{ url_for('student_dashboard') }}">Back to Dashboard</a>
+  </div>
+</body>
+</html>

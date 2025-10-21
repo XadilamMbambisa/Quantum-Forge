@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard - STEMify</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="content-wrapper">
+    <h1>Welcome, {{ username }}</h1>
+    <h2>Student Dashboard</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p class="error">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <ul>
+      <li><a href="{{ url_for('quiz') }}">📝 Take Quiz</a></li>
+      <li><a href="{{ url_for('book_session') }}">📅 Book Advisor Session</a></li>
+      <li><a href="{{ url_for('logout') }}">🚪 Logout</a></li>
+    </ul>
+    <h3>Your Quiz Results</h3>
+    {% if results %}
+      <ul>
+        {% for r in results %}
+          <li>Best Path: {{ r.chosen_path | capitalize }} - <a href="{{ url_for('results', result_id=r.id) }}">View Details</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No quiz results yet. Take the quiz!</p>
+    {% endif %}
+    <h3>Your Bookings</h3>
+    {% if bookings %}
+      <table>
+        <tr><th>ID</th><th>Advisor</th><th>Time</th><th>Status</th><th>Actions</th></tr>
+        {% for b in bookings %}
+          <tr>
+            <td>{{ b.id }}</td>
+            <td>{{ b.advisor.username }}</td>
+            <td>{{ b.start_time.strftime('%Y-%m-%d %H:%M') }}</td>
+            <td>{{ b.status | capitalize }}</td>
+            <td>
+              {% if b.status in ['booked', 'rescheduled'] %}
+                <form action="{{ url_for('cancel_session', booking_id=b.id) }}" method="POST" style="display:inline;">
+                  <button type="submit">Cancel</button>
+                </form>
+                <form action="{{ url_for('reschedule_session', booking_id=b.id) }}" method="POST" style="display:inline;">
+                  <input type="datetime-local" name="new_time" required>
+                  <button type="submit">Reschedule</button>
+                </form>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No bookings yet.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

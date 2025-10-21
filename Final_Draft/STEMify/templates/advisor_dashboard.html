@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advisor Dashboard - STEMify</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="content-wrapper">
+    <h1>Welcome, {{ username }}</h1>
+    <h2>Advisor Dashboard</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p class="error">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <ul>
+      <li><a href="{{ url_for('view_sessions') }}">👥 View Booked Sessions</a></li>
+      <li><a href="{{ url_for('logout') }}">🚪 Logout</a></li>
+    </ul>
+    <h3>Your Bookings</h3>
+    {% if bookings %}
+      <table>
+        <tr><th>ID</th><th>Student</th><th>Time</th><th>Status</th><th>Actions</th></tr>
+        {% for b in bookings %}
+          <tr>
+            <td>{{ b.id }}</td>
+            <td>{{ b.student.username }}</td>
+            <td>{{ b.start_time.strftime('%Y-%m-%d %H:%M') }}</td>
+            <td>{{ b.status | capitalize }}</td>
+            <td>
+              {% if b.status in ['booked', 'rescheduled'] %}
+                <form action="{{ url_for('advisor_cancel', booking_id=b.id) }}" method="POST" style="display:inline;">
+                  <button type="submit">Cancel</button>
+                </form>
+                <form action="{{ url_for('advisor_reschedule', booking_id=b.id) }}" method="POST" style="display:inline;">
+                  <input type="datetime-local" name="new_time" required>
+                  <button type="submit">Reschedule</button>
+                </form>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No bookings scheduled.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

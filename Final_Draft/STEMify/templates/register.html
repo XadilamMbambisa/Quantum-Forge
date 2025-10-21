@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - STEMify</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Create Account</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p class="error">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      <label for="confirm_password">Confirm Password:</label>
+      <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+      <label for="role">Role:</label>
+      <select id="role" name="role" required>
+        <option value="student">Student</option>
+        <option value="advisor">Advisor</option>
+      </select><br><br>
+      <label for="course">Select Your Course (for Students):</label>
+      <select id="course" name="course">
+        <option value="">-- Select a Course --</option>
+        {% for course in courses %}
+          <option value="{{ course }}">{{ course }}</option>
+        {% endfor %}
+      </select><br><br>
+      <button type="submit">Register</button>
+    </form>
+    <p><a href="{{ url_for('index') }}">⬅ Back to Home</a></p>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ career_path | capitalize }} Careers - STEMify</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="content-wrapper">
+    <h2>{{ career_path | capitalize }} Careers for {{ course }}</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p class="error">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <p><strong>Department:</strong> {{ field.department }}</p>
+    <p>{{ field.description }}</p>
+    <hr>
+    <h3>Ideal Candidate</h3>
+    <p>{{ degree_info.ideal_candidate }}</p>
+    <h3>Career Alignment</h3>
+    <p>{{ degree_info.alignment }}</p>
+    <hr>
+    <h3>Recommended {{ career_path | capitalize }} Careers</h3>
+    {% if career_path == 'industry' %}
+      <ul>
+        {% for career in degree_info.industry %}
+          <li>
+            <strong>{{ career.title }}</strong><br>
+            {{ career.desc }}
+          </li>
+        {% endfor %}
+      </ul>
+      <h4>Emerging Industry Applications</h4>
+      <ul>
+        {% for app in degree_info.emerging_industry_applications %}
+          <li>{{ app }}</li>
+        {% endfor %}
+      </ul>
+    {% elif career_path == 'research' %}
+      <ul>
+        {% for career in degree_info.research_institutes %}
+          <li>
+            <strong>{{ career.title }}</strong><br>
+            {{ career.desc }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% elif career_path == 'academia' %}
+      <ul>
+        {% for career in degree_info.academia %}
+          <li>
+            <strong>{{ career.title }}</strong><br>
+            {{ career.desc }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <hr>
+    <a href="{{ url_for('student_dashboard') }}">Back to Dashboard</a>
+  </div>
+</body>
+</html>
